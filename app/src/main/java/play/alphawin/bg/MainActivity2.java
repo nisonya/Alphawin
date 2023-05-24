@@ -20,10 +20,11 @@ import android.widget.TextView;
 public class MainActivity2 extends AppCompatActivity {
 
     private ImageView mImageView = null;
-    public int level = 1;
+    public int level = 0;
     private boolean win = false;
     private int contPair=0;
-    private int pairs = 3;
+    private int[] pairs = {3,8,10,18};
+    private int[] numsCount={2,4,5,6};
     final int[] pics = new int[]{R.drawable.sport1, R.drawable.sport2,
             R.drawable.sport3, R.drawable.sport4,
             R.drawable.sport5, R.drawable.sport6};
@@ -31,7 +32,6 @@ public class MainActivity2 extends AppCompatActivity {
     int currpos = -1;
     public static Animation mAppearAnimation, mFadeAnimation;
     GridView gvMain;
-    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +42,10 @@ public class MainActivity2 extends AppCompatActivity {
         mFadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade);
         mAppearAnimation.setAnimationListener(animationAppearListener);
         mFadeAnimation.setAnimationListener(animationFadeListener);
-        //adapter = new ArrayAdapter<String>(this, R.layout.item_layout,R.id.tvFill, data);
+
+
         gvMain = (GridView)findViewById(R.id.gvMain);
-        GridAdapter gridAdapter = new GridAdapter(this);
+        GridAdapter gridAdapter = new GridAdapter(this, (pairs[level]*2));
         gvMain.setAdapter(gridAdapter);
         gvMain.setEnabled(false);
         gvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -69,7 +70,7 @@ public class MainActivity2 extends AppCompatActivity {
                         win = true;
                         ((ImageView)view).setImageResource(pics[pos[i]]);
                         contPair++;
-                        if(contPair==pairs){
+                        if(contPair==pairs[level]){
                             Dialog dialogWin = new Dialog(MainActivity2.this);
                             dialogWin.requestWindowFeature(Window.FEATURE_NO_TITLE);
                             dialogWin.setContentView(R.layout.win_dialog);
@@ -96,8 +97,8 @@ public class MainActivity2 extends AppCompatActivity {
 
 
     private void adjustGridView(){
-        gvMain.setNumColumns(2);
-        gvMain.setColumnWidth(300);
+        gvMain.setNumColumns(numsCount[level]);
+        //gvMain.setColumnWidth(300);
         gvMain.setVerticalSpacing(20);
         gvMain.setHorizontalSpacing(20);
         gvMain.setStretchMode(GridView.STRETCH_SPACING_UNIFORM);
@@ -153,7 +154,7 @@ public class MainActivity2 extends AppCompatActivity {
         btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                level=1;
+                gridChange(0);
                 dialog.dismiss();
             }
         });
@@ -161,7 +162,7 @@ public class MainActivity2 extends AppCompatActivity {
         btn_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                level=2;
+                gridChange(1);
                 dialog.dismiss();
             }
         });
@@ -169,7 +170,7 @@ public class MainActivity2 extends AppCompatActivity {
         btn_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                level=3;
+                gridChange(2);
                 dialog.dismiss();
             }
         });
@@ -177,9 +178,17 @@ public class MainActivity2 extends AppCompatActivity {
         btn_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                level=4;
+                gridChange(3);
                 dialog.dismiss();
             }
         });
+    }
+
+    private void gridChange(int i){
+        level=i;
+        adjustGridView();
+        gvMain.setColumnWidth(350-(level*10));
+        GridAdapter gridAdapter = new GridAdapter(MainActivity2.this, (pairs[level]*2));
+        gvMain.setAdapter(gridAdapter);
     }
 }

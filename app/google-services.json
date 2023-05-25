@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "356700212246",
+    "project_id": "alfasofnik",
+    "storage_bucket": "alfasofnik.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356700212246:android:36617ccc02433f3864b937",
+        "android_client_info": {
+          "package_name": "play.alphawin.bg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356700212246-vv9pi1f0etg32p814g11i6oph6v1197i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVAl-1atAAHpr5SSRgecFVhyvbR5lSsdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356700212246-vv9pi1f0etg32p814g11i6oph6v1197i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,12 +10,14 @@ import android.widget.ImageView;
 public class GridAdapter extends BaseAdapter {
     private Context context;
     private int ip;
+    private int param;
     final int[] pics = new int[]{R.drawable.sport1, R.drawable.sport2,
             R.drawable.sport3, R.drawable.sport4,
             R.drawable.sport5, R.drawable.sport6};
-    public GridAdapter(Context context, int ip){
+    public GridAdapter(Context context, int ip, int param){
         this.context=context;
         this.ip = ip;
+        this.param=param;
     }
     @Override
     public int getCount() {
@@ -37,7 +39,7 @@ public class GridAdapter extends BaseAdapter {
         ImageView imageView;
         if(view==null){
             imageView=new ImageView(context);
-            imageView.setLayoutParams(new ViewGroup.LayoutParams((350-ip*5),(350-ip*5)));
+            imageView.setLayoutParams(new ViewGroup.LayoutParams(param,param));
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         }
         else imageView =(ImageView)view;

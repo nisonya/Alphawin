@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="play.alphawin.bg">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +18,12 @@
         android:theme="@style/Theme.Alphawin"
         tools:targetApi="31">
         <activity
+            android:name=".NoInternet"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity3"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:usesCleartextTraffic="true"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"

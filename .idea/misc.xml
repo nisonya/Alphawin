@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/job/Alphawin2/app/src/main/res/drawable/bg.xml" value="0.1795" />
+        <entry key="..\:/job/Alphawin2/app/src/main/res/drawable/ic_baseline_wifi_off_24.xml" value="0.1715" />
         <entry key="..\:/job/Alphawin2/app/src/main/res/drawable/sport1.xml" value="0.1795" />
         <entry key="..\:/job/Alphawin2/app/src/main/res/drawable/sport2.xml" value="0.1795" />
         <entry key="..\:/job/Alphawin2/app/src/main/res/drawable/sport3.xml" value="0.1795" />
@@ -12,9 +13,11 @@
         <entry key="..\:/job/Alphawin2/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/job/Alphawin2/app/src/main/res/layout/activity_main2.xml" value="0.22826086956521738" />
         <entry key="..\:/job/Alphawin2/app/src/main/res/layout/activity_main3.xml" value="0.22826086956521738" />
+        <entry key="..\:/job/Alphawin2/app/src/main/res/layout/activity_no_internet.xml" value="0.1484375" />
         <entry key="..\:/job/Alphawin2/app/src/main/res/layout/dialog_layout.xml" value="0.2" />
         <entry key="..\:/job/Alphawin2/app/src/main/res/layout/item_layout.xml" value="0.22826086956521738" />
         <entry key="..\:/job/Alphawin2/app/src/main/res/layout/win_dialog.xml" value="0.16145833333333334" />
+        <entry key="..\:/job/Alphawin2/app/src/main/res/xml/url_values.xml" value="0.16145833333333334" />
       </map>
     </option>
   </component>
